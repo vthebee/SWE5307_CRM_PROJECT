@@ -18,3 +18,5 @@ CREATE TABLE customers (
 -- Insert a default user (Password: admin123)
 INSERT INTO users (username, password_hash) 
 VALUES ('admin', 'pbkdf2:sha256:260000$829tY9p6$86d4e7...');
+
+

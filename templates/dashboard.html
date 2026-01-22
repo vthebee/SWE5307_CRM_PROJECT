@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Customer Management Dashboard</h2>
+
+<div class="search-section">
+    <label for="searchBox">Filter Customers:</label>
+    <input type="text" id="searchBox" placeholder="Search by name or company..." aria-label="Search Customers">
+</div>
+
+<div class="table-container">
+    <table id="customerTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th class="hide-mobile">Company</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+            <tr class="customer-row">
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.email }}</td>
+                <td class="hide-mobile">{{ customer.company }}</td>
+                <td><span class="status-badge">{{ customer.status }}</span></td>
+                <td>
+                    <button onclick="if(confirmAction('Edit this client?')) location.href='#'">Edit</button>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">No customers found in the database.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

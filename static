@@ -1,8 +1,3 @@
-/**
- * Simple CRM Frontend Logic
- * Addresses requirements for JavaScript usage and Accessibility [cite: 45, 48]
- */
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log("CRM System Initialized");
     setupSearchFilter();
